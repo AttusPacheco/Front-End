@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Yu Gothic";
+}
+
+header{
+    width: 100%;
+    text-align: center;
+}
+
+header h1{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    background: rgba(225, 143, 0, 0.3);
+}
+
+header #logo{
+    width: 100%;
+    height: 300px;
+}
+
+header #logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+menu ul li{
+    list-style: none;
+    padding: 10px;
+}
+
+menu ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    border-bottom: 2px solid #c9c9c9;
+    padding: 10px;
+    transition: 0.5s all;
+}
+
+menu ul li a:hover{
+    border-bottom: 2px solid #FFA500;
+    color: #FFA500;
+}
+
+content{
+    width: 100%;
+}
+
+content .contents{
+    padding-top: 20px;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+content .contents .content-1 .content-title{
+    padding: 10px;
+}
+
+content .contents .content-1 .content-body{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+content .contents .content-1 .content-body .content-1-images{
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image{
+    width: 100%;
+    height: 200px;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image img{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s all;
+}
+
+content .contents .content-1 .content-body .content-1-images:hover .content-1-image img{
+    opacity: 1;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image img:first-child{
+    z-index: +1;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image img:last-child{
+    opacity: 0.1;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image:hover img:first-child{
+    opacity: 0.1;
+    transition: 0.5s all;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-image:hover img:last-child{
+    opacity: 1;
+    z-index: +2;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-images-body{
+    border:2px solid #c9c9c9;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-images-title{
+    padding: 10px;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-images-title a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: 0.5s all;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-images-title a:hover{
+    color: #FFA500;
+}
+
+content .contents .content-1 .content-body .content-1-images .content-1-images-content{
+    padding: 10px;
+    text-align: center;
+}
+
+footer .footer-content{
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    background: rgba(225, 143, 0, 1);
+}
