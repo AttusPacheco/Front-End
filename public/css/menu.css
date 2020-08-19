@@ -42,7 +42,6 @@
 
 .mobile-menu ul li{
     list-style: none;
-    text-align: left;
     padding: 10px;
 }
 
@@ -53,6 +52,7 @@
     padding: 10px 0 10px 0;
     text-decoration: none;
     color: #000000;
+    user-select: none;
 }
 
 .mobile-menu ul li a:hover{
@@ -62,7 +62,7 @@
 
 .mobile-menu details{
     width: 125px;
-    transition: 1s width;
+    transition: 0.5s width;
 }
 
 .mobile-menu details[open]{
@@ -74,11 +74,12 @@
 }
 
 .mobile-menu details[open] summary{
-    background: rgba(225, 143, 0, 1);
+    background: #FFA500;
+    animation: changeBackgroundColorLinearRadial 0.3s;
 }
 
 .mobile-menu details[open] summary p:after{
-    animation: changeMobileMenuSummaryContent 1s;
+    animation: changeMobileMenuSummaryContent 0.5s;
     content: "X";
 }
 
@@ -86,11 +87,15 @@
     font-weight: 500;
     color: #ffffff;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .mobile-menu details summary p{
     transform: rotate(90deg);
     transition: 1s all;
+    width: 52px;
 }
 
 .mobile-menu details summary p:after{
@@ -143,7 +148,7 @@
     25% {
         content: "/\";
     }
-    50% {
+    75% {
         content: 'X';
     }
     100% {

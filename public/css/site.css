@@ -1,3 +1,7 @@
+:root{
+    --default-color:#FFA500;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -109,7 +113,7 @@ content .contents .content-1 .content-body .content-1-images .content-1-images-t
 }
 
 content .contents .content-1 .content-body .content-1-images .content-1-images-title a:hover{
-    color: #FFA500;
+    color: var(--default-color);
 }
 
 content .contents .content-1 .content-body .content-1-images .content-1-images-content{
@@ -122,4 +126,50 @@ footer .footer-content{
     text-align: center;
     color: #ffffff;
     background: rgba(225, 143, 0, 1);
+}
+
+/* Animations */
+
+@keyframes changeBackgroundColorLinearRadial {
+    0%{
+        background-image: radial-gradient(var(--default-color) 5%, #ffbd00 30%, #ffe800 100%);
+    }
+    6%{
+        background-image: radial-gradient(var(--default-color) 6%, #ffbd00 50%, #ffe800 100%);
+    }
+    12.5%{
+        background-image: radial-gradient(var(--default-color) 12.5%, #ffbd00 50%, #ffe800 100%);
+    }
+
+    20% {
+        background-image: radial-gradient(var(--default-color) 20%, #ffbd00 65%, #ffe800 100%);
+    }
+
+    25%{
+        background-image: radial-gradient(var(--default-color) 25%, #ffbd00 65%, #ffe800 100%);
+    }
+
+    33% {
+        background-image: radial-gradient(var(--default-color) 33%, #ffbd00 65%, #ffe800 100%);
+    }
+
+    50% {
+        background-image: radial-gradient(var(--default-color) 50%, #ffbd00 70%, #ffe800 100%);
+    }
+
+    65% {
+        background-image: radial-gradient(var(--default-color) 65%, #ffbd00 70%, #ffe800 100%);
+    }
+
+    75% {
+        background-image: radial-gradient(var(--default-color) 75%, #ffbd00 80%, #ffe800 100%);
+    }
+
+    88% {
+        background-image: radial-gradient(var(--default-color) 88%, #ffbd00 80%, #ffe800 100%);
+    }
+
+    100% {
+        background-image: radial-gradient(var(--default-color) 100%, #ffbd00 100%, #ffe800 100%);
+    }
 }
