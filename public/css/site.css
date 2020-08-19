@@ -10,7 +10,8 @@ header{
 }
 
 header h1{
-    position: absolute;
+    position: fixed;
+    z-index: +9;
     top: 0;
     width: 100%;
     color: #ffffff;
@@ -26,31 +27,6 @@ header #logo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-menu ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-menu ul li{
-    list-style: none;
-    padding: 10px;
-}
-
-menu ul li a{
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    border-bottom: 2px solid #c9c9c9;
-    padding: 10px;
-    transition: 0.5s all;
-}
-
-menu ul li a:hover{
-    border-bottom: 2px solid #FFA500;
-    color: #FFA500;
 }
 
 content{
