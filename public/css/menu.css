@@ -62,9 +62,11 @@
 
 .mobile-menu details{
     width: 125px;
+    transition: 1s width;
 }
 
 .mobile-menu details[open]{
+    width: 250px;
     height: 100%;
     background: #ffffff;
     overflow-x: auto;
@@ -73,15 +75,26 @@
 
 .mobile-menu details[open] summary{
     background: rgba(225, 143, 0, 1);
+}
 
+.mobile-menu details[open] summary p:after{
+    animation: changeMobileMenuSummaryContent 1s;
+    content: "X";
 }
 
 .mobile-menu details summary{
-    padding: 13px 0 12px 0;
     font-weight: 500;
     color: #ffffff;
-    background: rgba(225, 143, 0, 0.5);
     width: 100%;
+}
+
+.mobile-menu details summary p{
+    transform: rotate(90deg);
+    transition: 1s all;
+}
+
+.mobile-menu details summary p:after{
+    content: "|||";
 }
 
 .mobile-menu details summary:focus{
@@ -101,5 +114,39 @@
 
     .mobile-menu{
         display: block;
+    }
+
+    header p{
+        font-weight: bold;
+    }
+
+    header .mobile-menu details summary{
+        font-weight: 100 !important;
+        font-size: 32px;
+    }
+
+    header .mobile-menu details{
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
+/* Animation */
+
+@keyframes changeMobileMenuSummaryContent {
+    0% {
+        content: "|||";
+    }
+    12% {
+        content: "||";
+    }
+    25% {
+        content: "/\";
+    }
+    50% {
+        content: 'X';
+    }
+    100% {
+        content: "X";
     }
 }
