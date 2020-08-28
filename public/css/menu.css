@@ -27,93 +27,65 @@
 
 .mobile-menu{
     display: none;
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
+    width: 125px;
+    text-align: center;
+    transition: 1s all;
+}
+
+.mobile-menu:hover:focus:active p{
+    color: black;
+}
+
+.mobile-menu:hover{
     height: 100%;
-    z-index: +9;
+    width: 250px;
+    background: #f0f0f0;
+}
+
+.mobile-menu:hover p{
+    background: var(--default-color);
+}
+
+.mobile-menu:hover ul{
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu p{
+    transition: 1s all;
+}
+
+.mobile-menu p:after{
+    content: '☰';
 }
 
 .mobile-menu ul{
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
+    display: none;
+    height: 90%;
+    overflow-x: auto;
+    opacity: 0;
+    transition: 1s opacity;
 }
 
 .mobile-menu ul li{
-    list-style: none;
     padding: 10px;
 }
 
 .mobile-menu ul li a{
     display: block;
-    width: 100%;
-    word-break: break-all;
-    padding: 10px 0 10px 0;
     text-decoration: none;
     color: #000000;
-    user-select: none;
-}
-
-.mobile-menu ul li a:hover{
-    border-width: 0;
-    color: #FFA500;
-}
-
-.mobile-menu details{
-    width: 125px;
-    transition: 0.5s width;
-}
-
-.mobile-menu details[open]{
-    width: 250px;
-    height: 100%;
-    background: #ffffff;
-    overflow-x: auto;
-    box-shadow: 20px 0 101px #404040;
-}
-
-.mobile-menu details[open] summary{
-    background: #FFA500;
-    animation: changeBackgroundColorLinearRadial 0.3s;
-}
-
-.mobile-menu details[open] summary p:after{
-    animation: changeMobileMenuSummaryContent 0.5s;
-    content: "X";
-}
-
-.mobile-menu details summary{
-    font-weight: 500;
-    color: #ffffff;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.mobile-menu details summary p{
-    transform: rotate(90deg);
-    transition: 1s all;
-    width: 52px;
-}
-
-.mobile-menu details summary p:after{
-    content: "|||";
-}
-
-.mobile-menu details summary:focus{
-    outline: none;
-}
-
-.mobile-menu details summary::-webkit-details-marker {
-    display: none;
+    font-size: 25px;
+    font-weight: normal;
 }
 
 /* Resize @media */
 
 @media only screen and (max-width: 740px) {
-    .normal-menu ul{
+    .normal-menu{
         display: none;
     }
 
@@ -125,15 +97,6 @@
         font-weight: bold;
     }
 
-    header .mobile-menu details summary{
-        font-weight: 100 !important;
-        font-size: 32px;
-    }
-
-    header .mobile-menu details{
-        font-size: 20px;
-        font-weight: 300;
-    }
 }
 
 /* Animation */
