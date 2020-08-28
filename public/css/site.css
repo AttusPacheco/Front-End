@@ -78,6 +78,7 @@ content .contents .content-1 .content-body .content-1-images .content-1-image im
     height: 200px;
     object-fit: cover;
     transition: 0.5s all;
+    border-radius: 5px;
 }
 
 content .contents .content-1 .content-body .content-1-images:hover .content-1-image img{
@@ -103,6 +104,7 @@ content .contents .content-1 .content-body .content-1-images .content-1-image:ho
 }
 
 content .contents .content-1 .content-body .content-1-images .content-1-images-body{
+    border-radius: 5px;
     border:2px solid #c9c9c9;
 }
 
@@ -141,6 +143,7 @@ content .contents .content-2 .content-body .background-image-boxes{
     background-size: cover;
     background-position: center center;
     margin-bottom: 30px;
+    border-radius: 5px;
 }
 
 content .contents .content-2 .content-body .background-image-boxes .background-image-boxes-title{
@@ -172,6 +175,7 @@ content .contents .content-2 .content-body .background-image-boxes .background-i
     display: grid;
     height: 150px;
     opacity: 1;
+    border-radius: 0 0 5px 5px;
 }
 
 content .contents .content-2 .content-body .background-image-boxes .background-image-boxes-body .box .box-title{
@@ -274,10 +278,12 @@ content .contents .content-3 .content-body .content-images-group .images-group-c
     width: 100%;
     z-index: +3;
     background-color: #000000;
+    border-radius: 5px;
 }
 
 content .contents .content-3 .content-body .content-images-group .images-group-column a:not(:hover) img{
     opacity: 0.7;
+    border-radius: 5px;
 }
 
 content .contents .content-3 .content-body .content-images-group .images-group-column img{
