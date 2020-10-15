@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Yu Gothic UI", serif;
+}
+
+body{
+    min-height: 100vh;
+}
+
+header{
+    box-shadow: #c7c7c7 0 0 10px 5px;
+}
+
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header nav h2{
+    padding: 15px;
+    color: #FFA500;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li{
+    list-style: none;
+    display: block;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    padding: 15px;
+    color: #000000;
+    transition: 0.3s all;
+}
+
+header nav ul li a:hover{
+    color: #FFA500;
+}
+
+content{
+    display: block;
+    min-height: 84vh;
+    width: 100%;
+    padding-top: 40px;
+}
+
+content .content{
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer{
+    padding: 10px;
+}
