@@ -60,7 +60,7 @@
 
 .accordion-tp-2[data-state=open] .accordion-title:after{
     transform: rotate(135deg);
-    top: -18px;
+    top: -17px;
     right: 5px;
 }
 
