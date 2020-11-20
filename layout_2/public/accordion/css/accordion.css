@@ -10,6 +10,10 @@
     padding: 15px;
 }
 
+.accordion .accordion-title:hover{
+    cursor: pointer;
+}
+
 .accordion-tp-1 .accordion-title h3:before{
     display: inline-block;
     border-top: 2px double;
@@ -24,7 +28,7 @@
 
 .accordion-tp-1[data-state=open] .accordion-title h3:before{
     width: 40px;
-    color: #FFA500;
+    color: #ffbf00;
 }
 
 .accordion-tp-2 .accordion-title:before, .accordion-tp-2 .accordion-title:after{
@@ -41,7 +45,7 @@
 
 .accordion-tp-2 .accordion-title:before{
     transform: rotate(90deg);
-    top: 9px;
+    top: 2px;
     right: 5px;
 }
 
@@ -50,17 +54,17 @@
 }
 
 .accordion-tp-2[data-state=open] .accordion-title:before, .accordion-tp-2[data-state=open] .accordion-title:after{
-    color: #FFA500;
+    color: #ffbf00;
 }
 
 .accordion-tp-2[data-state=open] .accordion-title:before{
     transform: rotate(45deg);
-    top: 14px;
+    top: 6px;
 }
 
 .accordion-tp-2[data-state=open] .accordion-title:after{
     transform: rotate(135deg);
-    top: -17px;
+    top: -19px;
     right: 5px;
 }
 
