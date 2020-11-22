@@ -50,12 +50,26 @@ header nav ul li a{
 content{
     display: block;
     width: 100%;
-    padding-top: 40px;
+    overflow-x: hidden;
 }
 
 content .content{
+    margin: auto;
     width: 90%;
-    margin: 0 auto;
+}
+
+.banner-tp-1{
+    width: 100vw;
+    height: 350px;
+    object-fit: cover;
+    margin-left: -6%;
+    margin-bottom: 25px;
+}
+
+.banner-tp-1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-presentation{
@@ -64,29 +78,95 @@ content .content{
     justify-content: space-between;
     align-items: center;
     overflow-y: auto;
+    scroll-behavior: smooth;
     margin-bottom: 35px;
     padding: 5px;
 }
 
+.product-presentation::after{
+    content: "";
+    padding: 1px;
+    right: 10px;
+}
+
+
+.product-presentation .scroll-back, .product-presentation .scroll-next{
+    cursor: pointer;
+}
+
+.product-presentation .scroll-back:focus, .product-presentation .scroll-next:focus{
+    outline: none;
+}
+
+.product-presentation[data-has-progress="0"] .scroll-back, .product-presentation[data-has-progress="0"] .scroll-next{
+    display: none;
+    visibility: hidden;
+}
+
+.product-presentation[data-has-progress="1"] .scroll-back{
+    content: "<";
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 100px;
+    background-color: rgba(255, 189, 0, 1);
+    padding: 5px 10px;
+    position: absolute;
+    left: 10px;
+    transition: 0.5s all;
+    border: none;
+}
+
+.product-presentation[data-has-progress="1"] .scroll-next{
+    content: ">";
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 100px;
+    background-color: rgba(255, 189, 0, 1);
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    transition: 0.5s all;
+    border: none;
+}
+
+.product-presentation[data-progress="0"] .scroll-back{
+    background-color: rgba(255, 189, 0, 0);
+    display: none;
+}
+
+.product-presentation[data-progress="100"] .scroll-back{
+    background-color: rgba(255, 189, 0, 1);
+}
+
+.product-presentation[data-progress="0"] .scroll-next{
+    background-color: rgba(255, 189, 0, 1);
+}
+
+.product-presentation[data-progress^="100"] .scroll-next, .product-presentation[data-progress^="99"] .scroll-next{
+    color: transparent;
+    display: none;
+    background-color: rgba(255, 189, 0, 0);
+}
+
 .product-presentation::-webkit-scrollbar{
+    display: none;
     width: 0;
     background: transparent;
 }
 
 .product-presentation::-webkit-scrollbar-thumb{
+    display: none;
     width: 0;
     background: transparent;
 }
 
-.product-presentation::after{
-    padding: 10px;
-}
-
 .product-content{
     box-shadow: inset #949494 0 0 5px 0;
-    min-width: 290px;
+    min-width: 265px;
     height: 380px;
-    margin-right: 30px;
+    margin: 0 20px;
     border-radius: 15px;
 }
 
