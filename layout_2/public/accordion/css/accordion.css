@@ -14,6 +14,12 @@
     cursor: pointer;
 }
 
+
+.accordion .accordion-title h3{
+    margin: 0;
+    font-size: 15px;
+}
+
 .accordion-tp-1 .accordion-title h3:before{
     display: inline-block;
     border-top: 2px double;
@@ -45,8 +51,8 @@
 
 .accordion-tp-2 .accordion-title:before{
     transform: rotate(90deg);
-    top: 2px;
-    right: 5px;
+    top: 3px;
+    right: 4px;
 }
 
 .accordion-tp-2 .accordion-title:after{
@@ -59,7 +65,8 @@
 
 .accordion-tp-2[data-state=open] .accordion-title:before{
     transform: rotate(45deg);
-    top: 6px;
+    top: 5px;
+    right: 5px;
 }
 
 .accordion-tp-2[data-state=open] .accordion-title:after{

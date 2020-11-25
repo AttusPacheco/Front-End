@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif !important;
+    line-height: initial;
 }
 
 body{
@@ -31,6 +32,7 @@ header nav .logo img{
 }
 
 header nav ul{
+    margin: 0;
     display: flex;
     align-items: center;
 }
@@ -47,6 +49,15 @@ header nav ul li a{
     transition: 0.3s all;
 }
 
+header nav ul li a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header nav ul li a:focus{
+    outline: none;
+}
+
 content{
     display: block;
     width: 100%;
@@ -58,18 +69,83 @@ content .content{
     width: 90%;
 }
 
-.banner-tp-1{
+.banner{
+    display: flex;
     width: 100vw;
     height: 350px;
-    object-fit: cover;
-    margin-left: -6%;
+    margin-left: -5.5%;
     margin-bottom: 25px;
 }
 
-.banner-tp-1 img{
+.banner .prev-image, .banner .next-image{
+    position: absolute;
+    /*display: none;*/
+}
+
+.banner .prev-image button, .banner .next-image button{
+    visibility: hidden;
+    color: transparent;
+    background: transparent;
+    border: none;
+    padding: 15px 19px;
+    border-radius: 100px;
+    transition: 0.5s all;
+}
+
+.banner .prev-image{
+    top: 44.5%;
+    left: 20px;
+}
+
+.banner .next-image{
+    top: 44.5%;
+    right: 20px;
+}
+
+.banner:hover .prev-image, .banner:hover .next-image{
+    display: inline-block;
+}
+
+.banner:hover .prev-image button, .banner:hover .next-image button{
+    background: rgba(112, 112, 112, 0.5);
+    color: #ffffff;
+    visibility: visible;
+}
+
+.banner .prev-image button:hover, .banner .next-image button:hover{
+    background: rgba(112, 112, 112, 1);
+}
+
+.banner .prev-image button:focus, .banner .next-image button:focus{
+    outline: none;
+}
+
+.banner-tp-1{
+    height: 450px;
+}
+
+.banner-tp-1 .banner-image img{
+    display: none;
+}
+
+.banner-tp-1 .banner-image img[class*="active"]{
+    display: block;
+}
+
+.banner-tp-1 .image-full-content, .banner-tp-1 .image-available-content{
+    height: 100%;
+}
+
+.banner-tp-1 .image-full-content img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.banner-tp-1 .image-available-content img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .product-presentation{

@@ -1,3 +1,6 @@
+// Section Banner
+
+// Section Product Presentation
 let productPresentation = document.querySelectorAll('.product-presentation');
 let productContent = document.querySelectorAll('.product-content');
 
