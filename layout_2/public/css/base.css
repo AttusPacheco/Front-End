@@ -14,6 +14,9 @@ header{
     padding: 25px;
     background-color: #ffbf00;
     box-shadow: #c7c7c7 0 0 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: +11;
 }
 
 header nav{
@@ -70,16 +73,15 @@ content .content{
 }
 
 .banner{
-    display: flex;
     width: 100vw;
     height: 350px;
-    margin-left: -5.5%;
+    margin-left: -5.59%;
     margin-bottom: 25px;
 }
 
 .banner .prev-image, .banner .next-image{
+    z-index: +1;
     position: absolute;
-    /*display: none;*/
 }
 
 .banner .prev-image button, .banner .next-image button{
@@ -120,32 +122,44 @@ content .content{
     outline: none;
 }
 
+.banner .banner-image img[class*="prepare-rm-change"]{
+    display: block;
+    transition: 1s opacity !important;
+    opacity: 0 !important;
+}
+
 .banner-tp-1{
     height: 450px;
 }
 
 .banner-tp-1 .banner-image img{
     display: none;
+    transition: 0.3s opacity;
 }
 
 .banner-tp-1 .banner-image img[class*="active"]{
     display: block;
+    opacity: 1;
 }
 
 .banner-tp-1 .image-full-content, .banner-tp-1 .image-available-content{
-    height: 100%;
+    height: 67.5%;
+    width: 100%;
+    position: absolute;
 }
 
 .banner-tp-1 .image-full-content img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
 }
 
 .banner-tp-1 .image-available-content img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+    opacity: 0;
 }
 
 .product-presentation{
@@ -164,7 +178,6 @@ content .content{
     padding: 1px;
     right: 10px;
 }
-
 
 .product-presentation .scroll-back, .product-presentation .scroll-next{
     cursor: pointer;
