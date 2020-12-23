@@ -1,5 +1,83 @@
-// Section Banner
+// Application
 
+function flipValue(value){
+    value = parseInt(value);
+    value = value - (value*2)
+    return value;
+}
+
+let slider = document.querySelectorAll('.slider');
+
+slider.forEach(function (item) {
+
+    let clientX = 0;
+    let mouseDownClientX = 0;
+    let currentClientX = 0;
+    let sliderDrag = item.querySelector('.slider-draggable');
+    let sliderWidth = sliderDrag.scrollWidth - sliderDrag.clientWidth;
+    let dragProgress = 0;
+
+    changeDragProgress(dragProgress);
+    addImageToBackground(sliderDrag.querySelectorAll('.product-image a'));
+
+    item.addEventListener('mousedown', mouseDown);
+
+    item.addEventListener('mouseup', function (){
+        item.removeEventListener('mousemove', mouseMove);
+    });
+
+    item.addEventListener('mouseleave', function (){
+        item.removeEventListener('mousemove', mouseMove);
+    });
+
+    item.addEventListener('click', function (e){
+        if (mouseDownClientX !== currentClientX){
+            e.preventDefault();
+        }
+    });
+
+    function getSliderTrace(){
+        let matrix = window.getComputedStyle(sliderDrag).transform;
+        let value = matrix.split(',')[4] ?? 0;
+        return parseInt(value);
+    }
+
+    function changeDragProgress(progress){
+        sliderDrag.setAttribute('style', `transform: translateX(${progress}px);`);
+    }
+
+    function mouseDown(element){
+        clientX = element.clientX;
+        currentClientX = element.clientX;
+        mouseDownClientX = element.clientX;
+        item.addEventListener('mousemove', mouseMove);
+    }
+
+    function mouseMove(element){
+         currentClientX = element.clientX;
+        let trace = currentClientX - clientX;
+        let maxTrace = flipValue(sliderWidth);
+
+        if (trace < 0 && !((getSliderTrace() + trace) < maxTrace)){
+            changeDragProgress(getSliderTrace() + trace);
+        } else if(trace > 0 && !((trace + getSliderTrace()) > 0)){
+            changeDragProgress(trace + getSliderTrace());
+        }
+
+        clientX = currentClientX;
+    }
+});
+
+function addImageToBackground(items){
+    items.forEach(function(item){
+        let image = item.querySelector('img');
+        let src = image.getAttribute('src');
+        image.setAttribute('style', 'display:none;');
+        item.setAttribute('style', `background: url(${src});`);
+    });
+}
+
+// Section Banner
 const BANNERS = document.querySelectorAll('.banner');
 
 BANNERS.forEach(function (item){
@@ -64,53 +142,4 @@ BANNERS.forEach(function (item){
         }, banner.timer);
     }
 
-});
-
-// Section Product Presentation
-let productPresentation = document.querySelectorAll('.product-presentation');
-let productContent = document.querySelectorAll('.product-content');
-
-function prepareSectionsProductPresentation(){
-    productPresentation.forEach(function (item){
-        let backButton = item.querySelector('.scroll-back');
-        let nextButton = item.querySelector('.scroll-next');
-
-        if (item.scrollWidth > item.clientWidth){
-            item.setAttribute("data-has-progress", "1");
-            item.setAttribute("data-progress", "0");
-
-            item.addEventListener('scroll', function (){
-                let maxLeftScroll = this.scrollWidth - this.clientWidth;
-                let currentLeftScroll = this.scrollLeft;
-                let scrollPercentage = (currentLeftScroll / maxLeftScroll) * 100;
-
-                item.setAttribute("data-progress", parseInt(scrollPercentage));
-            })
-        }else{
-            item.setAttribute("data-has-progress", "0");
-        }
-
-        backButton.addEventListener('click', function () {
-            item.scrollLeft -= 305;
-        });
-
-        nextButton.addEventListener('click', function () {
-            item.scrollLeft += 305;
-        });
-
-    });
-}
-
-// Run Scripts
-
-document.addEventListener('readystatechange', function (){
-    prepareSectionsProductPresentation();
-})
-
-window.addEventListener('resize', function (){
-    prepareSectionsProductPresentation();
-});
-
-window.addEventListener('change', function (){
-    prepareSectionsProductPresentation();
 });

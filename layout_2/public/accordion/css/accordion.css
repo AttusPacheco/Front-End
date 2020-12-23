@@ -65,7 +65,7 @@
 
 .accordion-tp-2[data-state=open] .accordion-title:before{
     transform: rotate(45deg);
-    top: 5px;
+    top: 4px;
     right: 5px;
 }
 
