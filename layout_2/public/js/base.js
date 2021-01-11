@@ -21,13 +21,20 @@ slider.forEach(function (item) {
     addImageToBackground(sliderDrag.querySelectorAll('.product-image a'));
 
     item.addEventListener('mousedown', mouseDown);
+    item.addEventListener('touchstart', mouseDown, {passive: true});
 
     item.addEventListener('mouseup', function (){
         item.removeEventListener('mousemove', mouseMove);
     });
-
     item.addEventListener('mouseleave', function (){
         item.removeEventListener('mousemove', mouseMove);
+    });
+
+    item.addEventListener('touchend', function (){
+        item.removeEventListener('touchmove', mouseMove);
+    });
+    item.addEventListener('touchcancel', function (){
+        item.removeEventListener('touchmove', mouseMove);
     });
 
     item.addEventListener('click', function (e){
@@ -47,14 +54,16 @@ slider.forEach(function (item) {
     }
 
     function mouseDown(element){
-        clientX = element.clientX;
-        currentClientX = element.clientX;
-        mouseDownClientX = element.clientX;
+        clientX = element.clientX ?? element.changedTouches[0].clientX;
+        currentClientX = clientX;
+        mouseDownClientX = clientX;
+
         item.addEventListener('mousemove', mouseMove);
+        item.addEventListener('touchmove', mouseMove, {passive: true});
     }
 
     function mouseMove(element){
-         currentClientX = element.clientX;
+        currentClientX = element.clientX ?? element.changedTouches[0].clientX;
         let trace = currentClientX - clientX;
         let maxTrace = flipValue(sliderWidth);
 
