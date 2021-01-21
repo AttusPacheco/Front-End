@@ -2,13 +2,23 @@
 
 function flipValue(value){
     value = parseInt(value);
-    value = value - (value*2)
-    return value;
+    return -(value);
 }
 
-let slider = document.querySelectorAll('.slider');
+function addImageToBackground(items){
+    items.forEach(function(item){
+        let image = item.querySelector('img');
+        let src = image.getAttribute('src');
+        image.setAttribute('style', 'display:none;');
+        item.setAttribute('style', `background: url(${src});`);
+    });
+}
 
-slider.forEach(function (item) {
+//  Slider
+
+const sliders = document.querySelectorAll('.slider');
+
+sliders.forEach(function (item) {
 
     let clientX = 0;
     let mouseDownClientX = 0;
@@ -19,6 +29,8 @@ slider.forEach(function (item) {
 
     changeDragProgress(dragProgress);
     addImageToBackground(sliderDrag.querySelectorAll('.product-image a'));
+
+    window.addEventListener('resize', updateSliderWidth)
 
     item.addEventListener('mousedown', mouseDown);
     item.addEventListener('touchstart', mouseDown, {passive: true});
@@ -75,16 +87,12 @@ slider.forEach(function (item) {
 
         clientX = currentClientX;
     }
-});
 
-function addImageToBackground(items){
-    items.forEach(function(item){
-        let image = item.querySelector('img');
-        let src = image.getAttribute('src');
-        image.setAttribute('style', 'display:none;');
-        item.setAttribute('style', `background: url(${src});`);
-    });
-}
+    function updateSliderWidth(){
+        sliderDrag = item.querySelector('.slider-draggable');
+        sliderWidth = sliderDrag.scrollWidth - sliderDrag.clientWidth;
+    }
+});
 
 // Section Banner
 const BANNERS = document.querySelectorAll('.banner');
@@ -107,7 +115,7 @@ BANNERS.forEach(function (item){
     banner.nextImageTimer = setTimer();
 
     if ((banner.currentActiveImage === null || banner.currentActiveImage.length === 0) && images.length > 0){
-        banner.images[0].classList.add('active');
+        banner.images[0].closest('.banner-image').classList.add('active');
     }else{
         banner.images.forEach(function (image, key){
             if (image.classList.contains('.active')){
@@ -138,8 +146,8 @@ BANNERS.forEach(function (item){
         clearTimeout(banner.nextImageTimer);
 
         setTimeout(function () {
-            banner.images[banner.lastActiveImage].classList.remove('active');
-            banner.images[banner.currentActiveImage].classList.add('active');
+            banner.images[banner.lastActiveImage].closest('.banner-image').classList.remove('active');
+            banner.images[banner.currentActiveImage].closest('.banner-image').classList.add('active');
         }, 500)
 
         banner.nextImageTimer = setTimer();
