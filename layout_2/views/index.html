@@ -19,20 +19,54 @@
     <body>
 
         <header>
-            <nav>
-                <h1>Title</h1>
-                <ul>
-                    <li>
-                        <a href="#">Início</a>
-                    </li>
-                    <li>
-                        <a href="#">Contato</a>
-                    </li>
-                    <li>
-                        <a href="#">Sobre</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="main-nav">
+                <div class="nav">
+                    <section class="logo">
+                        <h1>Title</h1>
+                    </section>
+                    <section class="search">
+                        Search
+                    </section>
+                    <section class="user-info">
+                        <div class="wishlist">
+                            <a href="#" class="wishlist" title="Wishlist">
+                                <ion-icon name="heart"></ion-icon>
+                            </a>
+                        </div>
+                        <div class="user">
+                            <a href="#" class="user" title="User">
+                                <ion-icon name="person"></ion-icon>
+                            </a>
+                        </div>
+                        <div class="cart">
+                            <a href="#" class="cart" data-target=".cart-view" title="Cart">
+                                <ion-icon name="cart"></ion-icon>
+                            </a>
+                            <div class="cart-view" data-state="">
+                                <div class="cart-clear">
+                                    <ion-icon name="cart" class="cart"></ion-icon>
+                                    <small>
+                                        Carrinho vazio, adicione um produto no carrinho para conseguir prosseguir para a compra.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">Início</a>
+                        </li>
+                        <li>
+                            <a href="#">Contato</a>
+                        </li>
+                        <li>
+                            <a href="#">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </header>
 
         <content>
@@ -83,17 +117,33 @@
 
                     <div class="slider">
                         <div class="products-content slider-draggable">
+
                             <div class="product-content">
-                                <div class="new-tag"></div>
+                                <div class="new-tag"> New </div>
                                 <div class="product-image">
                                     <a href="#">
                                         <img src="../public/images/480x480.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-buttons">
+                                    <a href="javascript:void(0)" class="wishlist" title="Wishlist">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                    <a href="javascript:void(0)" class="cart" title="Cart">
+                                        <ion-icon name="cart-outline"></ion-icon>
                                     </a>
                                 </div>
                                 <div class="product-details">
                                     <a href="#" class="name">
                                         Product
                                     </a>
+                                    <div class="product-rating">
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                    </div>
                                     <div class="price">
                                         <div class="dashed-price">R$ 89,90</div>
                                         <div class="actual-price">R$ 49,90</div>
@@ -103,18 +153,32 @@
                             </div>
 
                             <div class="product-content">
-                                <div class="new-tag"></div>
                                 <div class="product-image">
                                     <a href="#">
                                         <img src="../public/images/480x480.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-buttons">
+                                    <a href="javascript:void(0)" class="wishlist" title="Wishlist">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                    <a href="javascript:void(0)" class="cart" title="Cart">
+                                        <ion-icon name="cart-outline"></ion-icon>
                                     </a>
                                 </div>
                                 <div class="product-details">
                                     <a href="#" class="name">
                                         Product
                                     </a>
+                                    <div class="product-rating">
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star-half" class="text-warning"></ion-icon>
+                                        <ion-icon name="star-outline" class="text-warning"></ion-icon>
+                                    </div>
                                     <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
+                                        <div class="actual-price">R$ 169,49</div>
                                     </div>
                                 </div>
                             </div>
@@ -125,12 +189,54 @@
                                         <img src="../public/images/480x480.png" alt="">
                                     </a>
                                 </div>
+                                <div class="product-buttons">
+                                    <a href="javascript:void(0)" class="wishlist" title="Wishlist">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                    <a href="javascript:void(0)" class="cart" title="Cart">
+                                        <ion-icon name="cart-outline"></ion-icon>
+                                    </a>
+                                </div>
                                 <div class="product-details">
                                     <a href="#" class="name">
                                         Product
                                     </a>
                                     <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
+                                        <div class="dashed-price">R$ 89,90</div>
+                                        <div class="actual-price">R$ 74,99</div>
+                                        <div class="percentage-off">12% Off</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-content">
+                                <div class="new-tag"> New </div>
+                                <div class="product-image">
+                                    <a href="#">
+                                        <img src="../public/images/480x480.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-buttons">
+                                    <a href="javascript:void(0)" class="wishlist" title="Wishlist">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </a>
+                                    <a href="javascript:void(0)" class="cart" title="Cart">
+                                        <ion-icon name="cart-outline"></ion-icon>
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <a href="#" class="name">
+                                        Product
+                                    </a>
+                                    <div class="product-rating">
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star" class="text-warning"></ion-icon>
+                                        <ion-icon name="star-outline" class="text-warning"></ion-icon>
+                                        <ion-icon name="star-outline" class="text-warning"></ion-icon>
+                                    </div>
+                                    <div class="price">
+                                        <div class="actual-price">R$ 57,99</div>
                                     </div>
                                 </div>
                             </div>
@@ -141,20 +247,12 @@
                                         <img src="../public/images/480x480.png" alt="">
                                     </a>
                                 </div>
-                                <div class="product-details">
-                                    <a href="#" class="name">
-                                        Product
+                                <div class="product-buttons">
+                                    <a href="javascript:void(0)" class="wishlist" title="Wishlist">
+                                        <ion-icon name="heart-outline"></ion-icon>
                                     </a>
-                                    <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product-content">
-                                <div class="product-image">
-                                    <a href="#">
-                                        <img src="../public/images/480x480.png" alt="">
+                                    <a href="javascript:void(0)" class="cart" title="Cart">
+                                        <ion-icon name="cart-outline"></ion-icon>
                                     </a>
                                 </div>
                                 <div class="product-details">
@@ -162,55 +260,7 @@
                                         Product
                                     </a>
                                     <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product-content">
-                                <div class="product-image">
-                                    <a href="#">
-                                        <img src="../public/images/480x480.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <a href="#" class="name">
-                                        Product
-                                    </a>
-                                    <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product-content">
-                                <div class="product-image">
-                                    <a href="#">
-                                        <img src="../public/images/480x480.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <a href="#" class="name">
-                                        Product
-                                    </a>
-                                    <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product-content">
-                                <div class="product-image">
-                                    <a href="#">
-                                        <img src="../public/images/480x480.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <a href="#" class="name">
-                                        Product
-                                    </a>
-                                    <div class="price">
-                                        <p class="actual-price">R$ 119,90</p>
+                                        <div class="actual-price">R$ 89,90</div>
                                     </div>
                                 </div>
                             </div>
@@ -272,6 +322,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <script type="text/javascript" src="../public/accordion/js/accordion.js"></script>
     <script type="text/javascript" src="../public/js/base.js"></script>

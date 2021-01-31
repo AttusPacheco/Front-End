@@ -1,10 +1,5 @@
 // Application
 
-function flipValue(value){
-    value = parseInt(value);
-    return -(value);
-}
-
 function addImageToBackground(items){
     items.forEach(function(item){
         let image = item.querySelector('img');
@@ -19,13 +14,12 @@ function addImageToBackground(items){
 const sliders = document.querySelectorAll('.slider');
 
 sliders.forEach(function (item) {
-
     let clientX = 0;
-    let mouseDownClientX = 0;
+    let dragProgress = 0;
     let currentClientX = 0;
+    let mouseDownClientX = 0;
     let sliderDrag = item.querySelector('.slider-draggable');
     let sliderWidth = sliderDrag.scrollWidth - sliderDrag.clientWidth;
-    let dragProgress = 0;
 
     changeDragProgress(dragProgress);
     addImageToBackground(sliderDrag.querySelectorAll('.product-image a'));
@@ -77,20 +71,20 @@ sliders.forEach(function (item) {
     function mouseMove(element){
         currentClientX = element.clientX ?? element.changedTouches[0].clientX;
         let trace = currentClientX - clientX;
-        let maxTrace = flipValue(sliderWidth);
+        let maxTrace = -(sliderWidth);
 
         if (trace < 0 && !((getSliderTrace() + trace) < maxTrace)){
             changeDragProgress(getSliderTrace() + trace);
         } else if(trace > 0 && !((trace + getSliderTrace()) > 0)){
             changeDragProgress(trace + getSliderTrace());
         }
-
         clientX = currentClientX;
     }
 
     function updateSliderWidth(){
         sliderDrag = item.querySelector('.slider-draggable');
         sliderWidth = sliderDrag.scrollWidth - sliderDrag.clientWidth;
+        changeDragProgress(0);
     }
 });
 
