@@ -6,8 +6,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Lato', sans-serif;
     line-height: initial;
+}
+
+*:before, *:after{
+    box-sizing: border-box;
 }
 
 body{
@@ -17,7 +21,6 @@ body{
 /* Header */
 
 header .main-nav .nav{
-    padding: 15px;
     background-color: #ff8d00;
     box-shadow: #c7c7c7 0 0 10px 0;
     color: #ffffff;
@@ -29,6 +32,7 @@ header .main-nav .nav{
 header .main-nav .nav .logo h1{
     font-size: 30px;
     margin: auto;
+    padding: 15px;
 }
 
 header .main-nav .nav .user-info{
@@ -37,19 +41,20 @@ header .main-nav .nav .user-info{
     position: relative;
 }
 
-header .main-nav .nav .user-info div > a{
-    padding: 6px 15px 0;
+header .main-nav .nav .user-info .user, header .main-nav .nav .user-info .wishlist,
+header .main-nav .nav .user-info .cart{
+    padding: 15px;
     display: block;
     color: #fff;
     font-size: 20px;
 }
 
-header .main-nav .nav .user-info div.cart:hover .cart-view{
+header .main-nav .nav .user-info .cart:hover .cart-view{
     display: block;
     opacity: 1;
 }
 
-header .main-nav .nav .user-info div > .cart-view{
+header .main-nav .nav .user-info .cart .cart-view{
     position: absolute;
     background-color: #fff;
     top: 48px;
@@ -64,7 +69,8 @@ header .main-nav .nav .user-info div > .cart-view{
     transition: 1s opacity;
 }
 
-header .main-nav .nav .user-info div > .cart-view .cart-clear{
+header .main-nav .nav .user-info .cart .cart-view .cart-clear{
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,13 +82,13 @@ header .main-nav .nav .user-info div > .cart-view .cart-clear{
     color: #6d6d6d;
 }
 
-header .main-nav .nav .user-info div > .cart-view .cart-clear .cart{
+header .main-nav .nav .user-info .cart .cart-view .cart-clear .cart{
     display: block;
     padding-bottom: 20px;
     font-size: 30px;
 }
 
-header .main-nav .nav .user-info div > .cart-view .cart-clear small{
+header .main-nav .nav .user-info .cart .cart-view .cart-clear small{
     font-weight: 700;
 }
 
@@ -403,7 +409,7 @@ content{
     margin: 0 0 15px;
     display: inline-flex;
     border-radius: 100%;
-    transition: 1s opacity;
+    transition: 1s opacity, .3s color;
 }
 
 .product-presentation .product-content .product-buttons a:hover{
